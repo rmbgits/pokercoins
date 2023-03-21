@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kalkulator żetonów z pokera</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 30px;
+		}
+
+		form {
+			margin-top: 20px;
+			background-color: #ffffff;
+			padding: 20px;
+			border-radius: 5px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		input[type="number"] {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+			font-size: 18px;
+		}
+
+		select {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+			font-size: 18px;
+		}
+
+		button[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 18px;
+		}
+
+		button[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+
+		.result {
+			margin-top: 20px;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Kalkulator żetonów z pokera</h1>
+	<form id="calc-form">
+		<label for="chip-5">Liczba żetonów 5:</label>
+		<input type="number" id="chip-5" name="chip-5" min="0" value="0">
+		<label for="chip-10">Liczba żetonów 10:</label>
+		<input type="number" id="chip-10" name="chip-10" min="0" value="0">
+		<label for="chip-25">Liczba żetonów 25:</label>
+		<input type="number" id="chip-25" name="chip-25" min="0" value="0">
+		<label for="chip-100">Liczba żetonów 100:</label>
+		<input type="number" id="chip-100" name="chip-100" min="0" value="0">
+		<label for="chip-500">Liczba żetonów 500:</label>
+		<input type="number" id="chip-500" name="chip-500" min="0" value="0">
+<label for="chip-1000">Liczba żetonów 1000:</label>
+<input type="number" id="chip-1000" name="chip-1000" min="0" value="0">
+<label for="exchange-rate">Przelicznik punktów na złotówki 1000 punktów to:</label>
+<select id="exchange-rate" name="exchange-rate">
+<option value="0.0001">10 groszy</option>
+<option value="0.001">1 zł</option>
+<option value="0.01" selected>10 zł</option>
+</select>
+<button type="submit">Oblicz</button>
+</form>
+<div class="result" id="result"></div>
+
+<script>
+	const calcForm = document.getElementById('calc-form');
+	const resultEl = document.getElementById('result');
+
+	calcForm.addEventListener('submit', (event) => {
+		event.preventDefault();
+
+		const chip5 = parseInt(document.getElementById('chip-5').value) || 0;
+		const chip10 = parseInt(document.getElementById('chip-10').value) || 0;
+		const chip25 = parseInt(document.getElementById('chip-25').value) || 0;
+		const chip100 = parseInt(document.getElementById('chip-100').value) || 0;
+		const chip500 = parseInt(document.getElementById('chip-500').value) || 0;
+		const chip1000 = parseInt(document.getElementById('chip-1000').value) || 0;
+		const exchangeRate = parseFloat(document.getElementById('exchange-rate').value);
+
+		const total = (chip5 * 5) + (chip10 * 10) + (chip25 * 25) + (chip100 * 100) + (chip500 * 500) + (chip1000 * 1000);
+		const points = total;
+		const exchangeRateValue = points * exchangeRate;
+
+		resultEl.innerText = `Łącznie masz ${points} punktów, co daje ${exchangeRateValue.toFixed(2)} złotych.`;
+	});
+</script>
+</body>
+</html>
+

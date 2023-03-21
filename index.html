@@ -5,6 +5,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
+	footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+
+  bottom: 0;
+  width: 100%;
+}
+
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f2f2f2;
@@ -73,17 +83,17 @@
 <body>
 	<h1>Kalkulator żetonów z pokera</h1>
 	<form id="calc-form">
-		<label for="chip-5">Liczba żetonów 5:</label>
-		<input type="number" id="chip-5" name="chip-5" min="0" value="0">
-		<label for="chip-10">Liczba żetonów 10:</label>
-		<input type="number" id="chip-10" name="chip-10" min="0" value="0">
-		<label for="chip-25">Liczba żetonów 25:</label>
-		<input type="number" id="chip-25" name="chip-25" min="0" value="0">
-		<label for="chip-100">Liczba żetonów 100:</label>
-		<input type="number" id="chip-100" name="chip-100" min="0" value="0">
-		<label for="chip-500">Liczba żetonów 500:</label>
-		<input type="number" id="chip-500" name="chip-500" min="0" value="0">
-<label for="chip-1000">Liczba żetonów 1000:</label>
+<label for="chip-5"><img src="https://www.makstor.pl/data/gfx/pictures/medium/8/5/658_1.jpg" alt="Zeton 5" width="50" height="50">Liczba żetonów 5:</label>
+<input type="number" id="chip-5" name="chip-100" min="0" value="0">
+		<label for="chip-10"><img src="https://www.makstor.pl/pol_pl_ZETON-DO-GRY-Z-NOMINALEM-10-KASYNO-POKER-655_1.jpg" alt="Zeton 10" width="50" height="50">Liczba żetonów 10:</label>
+<input type="number" id="chip-10" name="chip-100" min="0" value="0">
+	<label for="chip-25"><img src="https://www.makstor.pl/pol_pl_ZETON-DO-GRY-Z-NOMINALEM-25-KASYNO-POKER-659_1.jpg" alt="Zeton 25" width="50" height="50">Liczba żetonów 25:</label>
+<input type="number" id="chip-25" name="chip-25" min="0" value="0">
+	<label for="chip-100"><img src="https://www.makstor.pl/pol_pl_ZETON-DO-GRY-Z-NOMINALEM-100-KASYNO-POKER-656_1.jpg" alt="Zeton 100" width="50" height="50">Liczba żetonów 100:</label>
+<input type="number" id="chip-100" name="chip-100" min="0" value="0">
+		<label for="chip-500"><img src="https://www.makstor.pl/pol_pl_ZETON-DO-GRY-Z-NOMINALEM-500-KASYNO-POKER-660_1.jpg" alt="Zeton 500" width="50" height="50">Liczba żetonów 500:</label>
+<input type="number" id="chip-500" name="chip-500" min="0" value="0">
+		<label for="chip-1000"><img src="https://www.makstor.pl/pol_pl_ZESTAW-DO-POKERA-ZETONY-7-NOMINALOW-GRA-POKER-1000-2837_5.jpg" alt="Zeton 1000" width="50" height="50">Liczba żetonów 1000:</label>
 <input type="number" id="chip-1000" name="chip-1000" min="0" value="0">
 <label for="exchange-rate">Przelicznik punktów na złotówki 1000 punktów to:</label>
 <select id="exchange-rate" name="exchange-rate">
@@ -117,6 +127,10 @@
 		resultEl.innerText = `Łącznie masz ${points} punktów, co daje ${exchangeRateValue.toFixed(2)} złotych.`;
 	});
 </script>
+
 </body>
+<footer>
+  <p>Created by Rafal</p>
+</footer>
 </html>
 
